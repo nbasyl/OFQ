@@ -1,4 +1,4 @@
 # OFQ
-This repository contains the training code of ViT introduced in our work: "Oscillation-free Quantization for Low-bit Vision Transformers" which is accepted at ICML 2023.
+The training code for ViT, which was presented in our paper titled "Oscillation-free Quantization for Low-bit Vision Transformers" and has been accepted for ICML 2023, is included in this repository.
 
-The code and model wieghts will be opensourced soon, once the camera ready version of our paper is done.
+A version of our paper that is ready for publication will be completed soon, after which we will make the code and model weights available as open source.
