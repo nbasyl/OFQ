@@ -1,0 +1,1 @@
+from .utils import replace_module_by_qmodule_deit, replace_module_by_qmodule_swin

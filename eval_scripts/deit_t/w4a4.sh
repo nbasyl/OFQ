@@ -1,0 +1,28 @@
+python3 eval.py -c./configs/ours_imagenet_recipe.attn_q.yml --model deit_tiny_distilled_patch16_224 \
+your_path/dataset/imagenet-1k/imagenet \
+--dataset 'torch/imagenet' \
+--epochs 300 \
+--batch-size 140 \
+--aq-enable \
+--aq-mode lsq \
+--aq-per-channel \
+--aq_clip_learnable \
+--aq-bitw 4 \
+--wq-enable \
+--wq-per-channel \
+--wq-bitw 4 \
+--wq-mode statsq \
+--model_type deit \
+--quantized \
+--pretrained \
+--pretrained_initialized \
+--use-kd --teacher deit_tiny_distilled_patch16_224 \
+--kd_hard_and_soft 1 \
+--qk_reparam \
+--qk_reparam_type 0 \
+--teacher_pretrained \
+--resume your_path/model_saved/deit_t/w4a4/w4a4_deit_t_qkr_cga.pth.tar \
+--output ./outputs/w4a4_deit_t_qkreparam_eval/ \
+--visible_gpu '0,1,2,4' \
+--world_size '4' \
+--tcp_port '36969'

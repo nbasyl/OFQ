@@ -1,0 +1,73 @@
+dataset: imagenet
+num_classes: 1000
+img_size: 224
+mean:
+    - 0.485
+    - 0.456
+    - 0.406
+std:
+    - 0.229
+    - 0.224
+    - 0.225
+crop_pct: 0.9
+scale:
+    - 0.08
+    - 1.0
+interpolation: bicubic
+train_interpolation: random
+aa: rand-m9-mstd0.5-inc1
+mixup: 0.8
+mixup_off_epoch: 0
+mixup_prob: 1.0
+mixup_mode: batch
+mixup_switch_prob: 0.5
+cutmix: 1.0
+reprob: 0.25
+remode: pixel
+amp: False
+model: swin_t
+model_ema: False
+batch_size: 512
+lr: 2e-4
+min_lr: 1e-5
+sched: cosine
+weight_decay: 0.0
+epochs: 300
+cooldown_epochs: 10
+warmup_epochs: 0
+warmup_lr: 0.00001
+opt: adamw
+smoothing: 0.1
+num_aug_repeats: 0
+workers: 1
+drop_path: 0.0
+qmodules:
+    - "features.0.0"
+    - "features.1.0.attn"
+    - "features.1.0.mlp"
+    - "features.1.1.attn"
+    - "features.1.1.mlp"
+    - "features.2.reduction"
+    - "features.3.0.attn"
+    - "features.3.0.mlp"
+    - "features.3.1.attn"
+    - "features.3.1.mlp"
+    - "features.4.reduction"
+    - "features.5.0.attn"
+    - "features.5.0.mlp"
+    - "features.5.1.attn"
+    - "features.5.1.mlp"
+    - "features.5.2.attn"
+    - "features.5.2.mlp"
+    - "features.5.3.attn"
+    - "features.5.3.mlp"
+    - "features.5.4.attn"
+    - "features.5.4.mlp"
+    - "features.5.5.attn"
+    - "features.5.5.mlp"
+    - "features.6.reduction"
+    - "features.7.0.attn"
+    - "features.7.0.mlp"
+    - "features.7.1.attn"
+    - "features.7.1.mlp"
+    - "head"

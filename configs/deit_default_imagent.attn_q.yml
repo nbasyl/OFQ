@@ -1,0 +1,69 @@
+dataset: imagenet
+num_classes: 1000
+img_size: 224
+mean:
+    - 0.485
+    - 0.456
+    - 0.406
+std:
+    - 0.229
+    - 0.224
+    - 0.225
+crop_pct: 0.9
+scale:
+    - 0.08
+    - 1.0
+interpolation: bicubic
+train_interpolation: random
+aa: rand-m9-mstd0.5-inc1
+mixup: 0.8
+mixup_off_epoch: 0
+mixup_prob: 1.0
+mixup_mode: batch
+mixup_switch_prob: 0.5
+cutmix: 1.0
+reprob: 0.25
+remode: pixel
+amp: False
+model_ema: False
+batch_size: 128
+lr: 5e-4
+min_lr: 1e-5
+sched: cosine
+weight_decay: 5e-2
+epochs: 300
+cooldown_epochs: 10
+warmup_epochs: 5
+warmup_lr: 0.00001
+opt: adamw
+smoothing: 0.1
+num_aug_repeats: 3
+workers: 4
+qmodules:
+    - "patch_embed.proj"
+    - "blocks.0.attn"
+    - "blocks.0.mlp"
+    - "blocks.1.attn"
+    - "blocks.1.mlp"
+    - "blocks.2.attn"
+    - "blocks.2.mlp"
+    - "blocks.3.attn"
+    - "blocks.3.mlp"
+    - "blocks.4.attn"
+    - "blocks.4.mlp"
+    - "blocks.5.attn"
+    - "blocks.5.mlp"
+    - "blocks.6.attn"
+    - "blocks.6.mlp"
+    - "blocks.7.attn"
+    - "blocks.7.mlp"
+    - "blocks.8.attn"
+    - "blocks.8.mlp"
+    - "blocks.9.attn"
+    - "blocks.9.mlp"
+    - "blocks.10.attn"
+    - "blocks.10.mlp"
+    - "blocks.11.attn"
+    - "blocks.11.mlp"
+    - "head"
+    - "head_dist"
