@@ -50,16 +50,6 @@ from timm.utils import ApexScaler, NativeScaler
 from src import *
 import math
 
-# tcp://localhost:37879
-# os.environ["CUDA_VISIBLE_DEVICES"] = "2,3,4,5"
-# os.environ['WORLD_SIZE'] = "4"
-# os.environ["CUDA_VISIBLE_DEVICES"] = "2"
-# os.environ['WORLD_SIZE'] = "1"
-
-# tcp://localhost:37869
-# os.environ["CUDA_VISIBLE_DEVICES"] = "1,6,7"
-# os.environ['WORLD_SIZE'] = "3"
-
 try:
     from apex import amp
     from apex.parallel import DistributedDataParallel as ApexDDP
