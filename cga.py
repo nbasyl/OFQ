@@ -447,7 +447,6 @@ def create_teacher_model(args):
         load_checkpoint(teacher, args.teacher_checkpoint, strict=True)
     return teacher
 
-### this only tackle 2d weight matrix (for qk reparam we skip the freezing of qk)
 def freeze_outside_boundary_weight_idx( cur_weight, num_bits,boundaryRange = 0.005):
     not_freeze_idx = torch.zeros_like(cur_weight).to(cur_weight.device)
     clip_val = torch.tensor([2.0]).to(cur_weight.device)
@@ -831,7 +830,6 @@ def main(local_rank, args):
             f.write(args_text)
 
     try:
-        ## we fix start epcoh to be 300 and num_epochs to be 300 + freeze_for_n_epochs
         if args.local_rank == 0:
             print('start_epoch: ', start_epoch)
             num_epochs = start_epoch + args.freeze_for_n_epochs
