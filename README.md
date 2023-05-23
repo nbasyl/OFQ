@@ -17,7 +17,7 @@ In this work, we discusses the issue of weight oscillation in quantization-aware
 conda create -n ofq python=3.8
 conda activate ofq
 python3 -m pip install numpy==1.22.3
-python3 -m pip install torch==2.0.0 torchvision 0.15.1
+python3 -m pip install torch==2.0.0 torchvision==0.15.1
 python3 -m pip install timm=0.5.4
 python3 -m pip install pyyaml
 ```
