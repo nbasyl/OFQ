@@ -953,7 +953,7 @@ def train_one_epoch(
             ### set the gradient of the weight outside the boundary to be 0 args.boundaryRange
             save_frozen_weight = {}
             freeze_idx_dic = {}
-            if args.qk_reparam: ## do not freeze qk as there is no quantization directly applied on q and k weight matrix
+            if args.qk_reparam:
                 if args.model_type == 'swin':
                     for k, v in model.named_modules():
                         if  (k[-3:] == 'fc1' or k[-3:] == 'fc2' or k[-2:] == '.v' or k[-4:] == 'proj' or k[-9:] == 'reduction'):
@@ -987,7 +987,7 @@ def train_one_epoch(
             
             ## restore the forzen weight:
             if args.qk_reparam:
-                if args.model_type == 'swin': #or k[-9:] == 'reduction'
+                if args.model_type == 'swin':
                     for k, v in model.named_modules():
                         if (k[-3:] == 'fc1' or k[-3:] == 'fc2' or k[-2:] == '.v' or k[-4:] == 'proj' or k[-9:] == 'reduction'):
                             with torch.no_grad():
