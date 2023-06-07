@@ -40,10 +40,8 @@ opt: adamw
 smoothing: 0.1
 workers: 4
 wq_enable: True
-wq_mode: "bwn" ## if wish to use bit setting do not change this simply add --BIT_mehod when running the code
 wq_bitw: 2
 aq_enable: True
-aq_mode: "elastic"
 aq_bitw: 2
 num_aug_repeats: 0
 qmodules:
