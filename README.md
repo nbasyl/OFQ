@@ -13,14 +13,12 @@ In this work, we discusses the issue of weight oscillation in quantization-aware
 ## Run
 
 ### 1. Requirements:
-```
-conda create -n ofq python=3.8
-conda activate ofq
-python3 -m pip install numpy==1.22.3
-python3 -m pip install torch==2.0.0 torchvision==0.15.1
-python3 -m pip install timm=0.5.4
-python3 -m pip install pyyaml
-```
+* numpy==1.22.3
+* torch==2.0.0 
+* torchvision==0.15.1
+* timm=0.5.4
+* pyyaml
+
 Please replace "/your/miniconda3/envs/ofq/lib/python3.8/site-packages/timm/data/dataset_factory.py" with "timm_fix_imagenet_loading_bugs/dataset_factory.py" as with the original code there is a "TypeError: __init__() got an unexpected keyword argument 'download'" error.
 
 ### 2. Data:
@@ -37,7 +35,7 @@ Please replace "/your/miniconda3/envs/ofq/lib/python3.8/site-packages/timm/data/
 ## Models
 ### 1. ImageNet1K dataset
 
-| Models | #Bits | Top-1 Accuracy | eval script |
+| Models | #Bits | Top-1 Accuracy (Model Link)| eval script |
 | --- | --- | --- | ------- |
 | DeiT-T |  32-32 | 72.02 | ------- |
 | OFQ DeiT-T | 2-2 | [**64.33**](https://hkustconnect-my.sharepoint.com/:u:/g/personal/sliuau_connect_ust_hk/ETacXA4nZxtBuJ2RSVO6GToBqe6M8vnL0hXo75msagLKDw?e=RdConK)| eval_scripts/deit_t/w2a2.sh |
