@@ -74,6 +74,4 @@ If you find our code useful for your research, please consider citing:
 
 Shih-Yang Liu, HKUST (sliuau at connect.ust.hk)
 
-## License
-OFQ is CC-BY-NC 4.0 licensed as of now.
 
