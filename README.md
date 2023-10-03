@@ -58,15 +58,20 @@ The original code is borrowed from [DeiT](https://github.com/facebookresearch/de
 
 If you find our code useful for your research, please consider citing:
 ```bibtex
-@misc{https://doi.org/10.48550/arxiv.2302.02210,
-  doi = {10.48550/ARXIV.2302.02210},
-  url = {https://arxiv.org/abs/2302.02210},
-  author = {Liu, Shih-Yang and Liu, Zechun and Cheng, Kwang-Ting},
-  keywords = {Computer Vision and Pattern Recognition (cs.CV), Artificial Intelligence (cs.AI), Hardware Architecture (cs.AR), Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {Oscillation-free Quantization for Low-bit Vision Transformers},
-  publisher = {arXiv},
-  year = {2023},
-  copyright = {arXiv.org perpetual, non-exclusive license}
+@InProceedings{pmlr-v202-liu23w,
+  title = 	 {Oscillation-free Quantization for Low-bit Vision Transformers},
+  author =       {Liu, Shih-Yang and Liu, Zechun and Cheng, Kwang-Ting},
+  booktitle = 	 {Proceedings of the 40th International Conference on Machine Learning},
+  pages = 	 {21813--21824},
+  year = 	 {2023},
+  editor = 	 {Krause, Andreas and Brunskill, Emma and Cho, Kyunghyun and Engelhardt, Barbara and Sabato, Sivan and Scarlett, Jonathan},
+  volume = 	 {202},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {23--29 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://proceedings.mlr.press/v202/liu23w/liu23w.pdf},
+  url = 	 {https://proceedings.mlr.press/v202/liu23w.html},
+  abstract = 	 {Weight oscillation is a by-product of quantization-aware training, in which quantized weights frequently jump between two quantized levels, resulting in training instability and a sub-optimal final model. We discover that the learnable scaling factor, a widely-used $\textit{de facto}$ setting in quantization aggravates weight oscillation. In this work, we investigate the connection between learnable scaling factor and quantized weight oscillation using ViT, and we additionally find that the interdependence between quantized weights in $\textit{query}$ and $\textit{key}$ of a self-attention layer also makes ViT vulnerable to oscillation. We propose three techniques correspondingly: statistical weight quantization ($\rm StatsQ$) to improve quantization robustness compared to the prevalent learnable-scale-based method; confidence-guided annealing ($\rm CGA$) that freezes the weights with $\textit{high confidence}$ and calms the oscillating weights; and $\textit{query}$-$\textit{key}$ reparameterization ($\rm QKR$) to resolve the query-key intertwined oscillation and mitigate the resulting gradient misestimation. Extensive experiments demonstrate that our algorithms successfully abate weight oscillation and consistently achieve substantial accuracy improvement on ImageNet. Specifically, our 2-bit DeiT-T/DeiT-S surpass the previous state-of-the-art by 9.8% and 7.7%, respectively. The code is included in the supplementary material and will be released.}
 }
 ```
 
